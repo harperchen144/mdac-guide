@@ -78,6 +78,8 @@
   .fm-puzzle{background:#f5f5f5;border:1px solid #ddd;border-radius:5px;padding:8px;margin:0 14px 8px;text-align:center;font-size:11px;color:#888}
   .fm-submit-area{text-align:center;padding:8px 14px 12px}
   .fm-submit-btn{display:inline-block;background:#5b6abf;color:white;border:none;border-radius:4px;padding:7px 30px;font-size:13px;font-weight:600;opacity:0.85}
+  .sub-tab.act{background:#2563eb!important;color:#fff!important}
+  .sub-sec{animation:fadeIn 0.3s ease}
   .footer{text-align:center;font-size:11px;color:#ccc;margin-top:20px}
   @media(max-width:500px){
     .fm-grid{grid-template-columns:1fr}.fm-full{grid-column:1}
@@ -200,6 +202,50 @@
 
   <!-- ========== SEC 1: MDAC 教程 ========== -->
   <div class="sec" data-top="1">
+
+    <!-- Sub-tabs -->
+    <div style="display:flex;gap:0;margin-bottom:14px;border-radius:10px;overflow:hidden;border:1px solid #ddd;background:#fff">
+      <div class="sub-tab act" onclick="showSub(0)" style="flex:1;padding:10px;text-align:center;font-size:13px;font-weight:600;cursor:pointer;color:#6b7280;transition:all 0.15s;border:none;background:none">&#128247; 截图图解</div>
+      <div class="sub-tab" onclick="showSub(1)" style="flex:1;padding:10px;text-align:center;font-size:13px;font-weight:600;cursor:pointer;color:#6b7280;transition:all 0.15s;border:none;background:none;border-left:1px solid #ddd">&#128221; 模拟填写</div>
+    </div>
+
+    <!-- Sub 0: 截图图解 -->
+    <div class="sub-sec active" data-sub="0">
+      <div class="alert alert-blue" style="font-size:13px">
+        <b>&#128247; 以下是 MDAC 官方网站的真实截图</b>，红色标注为中文填写提示。请对照截图在官网逐步填写。
+      </div>
+
+      <div class="card">
+        <h2>Step 1：进入官网，点击 REGISTER</h2>
+        <div class="card-sub">打开 <a href="https://imigresen-online.imi.gov.my/mdac/main?registerMain" target="_blank" class="link">MDAC 官网</a>，找到红色 REGISTER 按钮</div>
+        <img src="mdac1.jpg" alt="MDAC首页截图" style="width:100%;border-radius:8px;border:1px solid #e5e7eb">
+      </div>
+
+      <div class="card">
+        <h2>Step 2：填写个人信息</h2>
+        <div class="card-sub">对照护照填写姓名、护照号、出生日期等，注意日期格式为 DD/MM/YYYY（日/月/年）</div>
+        <img src="mdac2.jpg" alt="个人信息填写截图" style="width:100%;border-radius:8px;border:1px solid #e5e7eb">
+      </div>
+
+      <div class="card">
+        <h2>Step 3：填写行程信息 + 住址 + 提交</h2>
+        <div class="card-sub">行程信息和马来西亚住址都在同一页，填完后拖动滑块验证并提交</div>
+        <img src="mdac3.jpg" alt="行程信息和住址截图" style="width:100%;border-radius:8px;border:1px solid #e5e7eb">
+      </div>
+
+      <div class="alert alert-amber" style="font-size:13px">
+        <b>&#128680; 提交后请务必截图保存确认页</b>，记下 Registration No.，入境时边检官员可能会查看。
+      </div>
+
+      <div class="card" style="text-align:center">
+        <h3>扫码前往官方填写页面</h3>
+        <div class="qr-wrap"><div class="qr-box"><div id="qr3"></div></div></div>
+        <a class="link" href="https://imigresen-online.imi.gov.my/mdac/main?registerMain" target="_blank">&#128279; imigresen-online.imi.gov.my/mdac</a>
+      </div>
+    </div>
+
+    <!-- Sub 1: 模拟填写 -->
+    <div class="sub-sec" data-sub="1" style="display:none">
     <div class="alert alert-blue" style="font-size:13px">
       <b>&#9432; 这是填写示例教程，不是正式填写页面。</b>请扫码或点击链接进入官方网站，对照下方教程逐项填写。
     </div>
@@ -281,7 +327,9 @@
       <div class="qr-wrap"><div class="qr-box"><div id="qr2"></div></div></div>
       <a class="link" href="https://imigresen-online.imi.gov.my/mdac/main?registerMain" target="_blank">&#128279; 前往 MDAC 官方网站</a>
     </div>
-  </div>
+    </div><!-- end sub-sec 1 -->
+
+  </div><!-- end SEC 1 MDAC 教程 -->
 
   <!-- ========== SEC 2: FAQ ========== -->
   <div class="sec" data-top="2">
@@ -302,10 +350,11 @@
 </div>
 <script>
 function showTop(i){document.querySelectorAll('.sec').forEach(function(s,idx){s.classList.toggle('active',idx===i)});document.querySelectorAll('.top-tab').forEach(function(b,idx){b.classList.toggle('act',idx===i)});window.scrollTo({top:0,behavior:'smooth'})}
+function showSub(i){document.querySelectorAll('.sub-sec').forEach(function(s,idx){s.style.display=(idx===i)?'block':'none'});document.querySelectorAll('.sub-tab').forEach(function(b,idx){b.classList.toggle('act',idx===i)})}
 function showS(i){document.querySelectorAll('.fm-section').forEach(function(s,idx){s.style.display=(idx===i)?'block':'none';s.className=(idx===i)?'fm-section active':'fm-section'});document.querySelectorAll('.fm-tab').forEach(function(b,idx){b.className=(idx===i)?'fm-tab act':'fm-tab'})}
 function cpAddr(){navigator.clipboard.writeText('Jalan Pantai 3, Desaru Coast\nBandar Penawar\nJohor Darul Ta\'zim\n81930 Malaysia').then(function(){var m=document.getElementById('cpMsg');m.style.display='inline';setTimeout(function(){m.style.display='none'},2000)})}
 function mkQR(id,sz){var el=document.getElementById(id);if(!el)return;try{new QRCode(el,{text:'https://imigresen-online.imi.gov.my/mdac/main?registerMain',width:sz,height:sz,colorDark:'#1a3a7a',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M})}catch(e){}}
-mkQR('qr1',150);mkQR('qr2',130);
+mkQR('qr1',150);mkQR('qr2',130);mkQR('qr3',140);
 </script>
 </body>
 </html>
