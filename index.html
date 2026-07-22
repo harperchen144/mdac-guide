@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDAC 马来西亚电子入境卡 填写指南</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif;background:#f5f5f5;color:#333;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .page{max-width:680px;margin:0 auto;padding:16px 12px 40px}
+  .w-banner{background:#E24B4A;color:#fff;border-radius:14px;padding:16px 18px;margin-bottom:16px;display:flex;align-items:flex-start;gap:12px;font-size:15px;line-height:1.6;box-shadow:0 2px 12px rgba(226,75,74,0.25)}
+  .w-banner b{font-size:17px}
+  .w-entry{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:24px;margin-bottom:16px;text-align:center;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  .w-entry-title{font-size:20px;font-weight:600;margin-bottom:4px}
+  .w-entry-sub{font-size:14px;color:#6b7280;margin-bottom:14px}
+  .w-badge{display:inline-block;background:#FEF3C7;color:#92400E;border:1px solid #FDE68A;font-size:13px;padding:5px 14px;border-radius:8px;margin-bottom:14px;font-weight:500}
+  .w-qr{display:inline-block;margin:10px 0;padding:10px;background:#fff;border-radius:10px;border:1px solid #e5e7eb}
+  .w-link{display:block;color:#2563eb;font-size:15px;font-weight:600;text-decoration:none;margin-top:10px;word-break:break-all}
+  .w-link:hover{text-decoration:underline}
+  .w-mock-wrap{background:#f0f0f0;border:1px solid #e0e0e0;border-radius:14px;padding:12px;margin-bottom:16px}
+  .w-mock-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #ddd}
+  .w-mock-dot{width:10px;height:10px;border-radius:50%}
+  .w-mock-urlbar{flex:1;background:#fff;border:1px solid #ddd;border-radius:14px;padding:5px 12px;font-size:12px;color:#999;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .w-mock-badge{background:#FEF3C7;color:#92400E;border:1px solid #FDE68A;font-size:11px;padding:3px 10px;border-radius:6px;font-weight:600;white-space:nowrap}
+  .w-legend{display:flex;gap:16px;margin-bottom:12px;flex-wrap:wrap;padding:0 4px}
+  .w-legend-item{display:flex;align-items:center;gap:5px;font-size:12px;color:#6b7280}
+  .w-tips{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:18px 22px;margin-bottom:16px;box-shadow:0 1px 4px rgba(0,0,0,0.04)}
+  .w-tips h3{font-size:16px;font-weight:600;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  .w-tips-list{list-style:none;padding:0;margin:0;counter-reset:tips}
+  .w-tips-list li{padding:8px 0;font-size:14px;color:#333;display:flex;align-items:flex-start;gap:10px;line-height:1.6;border-bottom:1px solid #f3f4f6}
+  .w-tips-list li:last-child{border:none}
+  .w-tips-list li::before{counter-increment:tips;content:counter(tips);background:#DBEAFE;color:#1E40AF;min-width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;flex-shrink:0;margin-top:2px}
+  .fm-nav{display:flex;gap:6px;margin-bottom:10px}
+  .fm-tab{flex:1;padding:8px 4px;border-radius:10px;font-size:12px;font-weight:600;cursor:pointer;text-align:center;border:1px solid #ddd;background:#fff;color:#6b7280;transition:all 0.15s}
+  .fm-tab.act{background:#2563eb;color:#fff;border-color:#2563eb}
+  .fm-tab:hover:not(.act){background:#f9fafb}
+  .fm-head{background:linear-gradient(135deg,#5b6abf,#7b8ad8);color:#fff;padding:12px 16px;border-radius:10px 10px 0 0;font-size:14px;font-weight:600}
+  .fm-body{background:#fff;border:1px solid #ddd;border-top:none;border-radius:0 0 10px 10px;padding:0}
+  .fm-sect{padding:12px 16px 4px}
+  .fm-sect-title{font-size:15px;font-weight:600;color:#2563eb;margin-bottom:2px}
+  .fm-sect-sub{font-size:12px;color:#9ca3af;margin-bottom:10px}
+  .fm-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px;padding:0 16px 12px}
+  .fm-row{margin-bottom:12px}
+  .fm-label{font-size:12px;color:#6b7280;margin-bottom:3px;display:flex;align-items:center;gap:3px;flex-wrap:wrap}
+  .fm-label .rq{color:#E24B4A;font-weight:700}
+  .fm-type{display:inline-block;font-size:9px;padding:2px 6px;border-radius:4px;font-weight:600;vertical-align:middle;margin-left:2px}
+  .fm-type.inp{background:#DBEAFE;color:#1E40AF}
+  .fm-type.sel{background:#F3E8FF;color:#6B21A8}
+  .fm-input{width:100%;border:1px solid #d1d5db;border-radius:5px;padding:7px 9px;font-size:12px;color:#6b7280;background:#fafafa}
+  .fm-select{width:100%;border:1px solid #d1d5db;border-radius:5px;padding:7px 9px;font-size:12px;color:#6b7280;background:#fafafa;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:26px}
+  .fm-tip{background:#FEF3C7;border:1px solid #FDE68A;border-radius:6px;padding:4px 8px;font-size:11px;color:#92400E;margin-top:4px;line-height:1.5}
+  .fm-tip.gn{background:#DCFCE7;border-color:#BBF7D0;color:#166534}
+  .fm-eg{background:#EFF6FF;border:1px solid #BFDBFE;border-radius:6px;padding:4px 8px;font-size:11px;color:#1E40AF;margin-top:3px;line-height:1.5}
+  .fm-eg.gn{background:#DCFCE7;border-color:#BBF7D0;color:#166534}
+  .fm-full{grid-column:1/-1}
+  .fm-warn{background:#FEF3C7;border:1px solid #FDE68A;border-radius:6px;padding:8px 12px;margin:0 16px 10px;font-size:12px;color:#92400E;display:flex;gap:6px;align-items:flex-start}
+  .fm-gn{color:#166534!important;background:#f0fdf4!important;border-color:#bbf7d0!important;font-weight:600!important}
+  .fm-section{display:none}
+  .fm-section.active{display:block}
+  .fm-puzzle{background:#f5f5f5;border:1px solid #ddd;border-radius:6px;padding:10px;margin:0 16px 10px;text-align:center;font-size:12px;color:#888}
+  .fm-submit-area{text-align:center;padding:10px 16px 14px}
+  .fm-submit-btn{display:inline-block;background:#5b6abf;color:white;border:none;border-radius:5px;padding:8px 36px;font-size:14px;font-weight:600;opacity:0.85}
+  @media(max-width:500px){
+    .fm-grid{grid-template-columns:1fr}
+    .fm-full{grid-column:1}
+    .page{padding:10px 8px 30px}
+    .w-banner{font-size:14px;padding:14px}
+    .fm-nav{flex-wrap:wrap}
+    .fm-tab{flex:none;width:calc(50% - 3px)}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="w-banner">
+    <span style="font-size:22px;flex-shrink:0;margin-top:2px">&#9888;&#65039;</span>
+    <div>
+      <b>MDAC 必须在到达前 3 天内填写</b>（含提交当天），太早填会失效！<br>
+      请确认好出行日期后，在出发前 1-3 天填写提交。
+    </div>
+  </div>
+
+  <div class="w-entry">
+    <div class="w-entry-title">&#127474;&#127486; MDAC 马来西亚电子入境卡</div>
+    <div class="w-entry-sub">Malaysia Digital Arrival Card</div>
+    <div class="w-badge">&#9432; 这是填写示例教程，不是正式填写页面</div>
+    <div style="font-size:14px;color:#333;line-height:1.8;margin-bottom:14px">
+      请扫码或点击链接进入<b>官方网站</b>，<br>对照下方教程逐项填写即可。
+    </div>
+    <div class="w-qr"><div id="qrMain"></div></div>
+    <a class="w-link" href="https://imigresen-online.imi.gov.my/mdac/main?registerMain" target="_blank">&#128279; imigresen-online.imi.gov.my/mdac</a>
+    <div style="font-size:13px;color:#9ca3af;margin-top:8px">进入后点击红色 <span style="color:#E24B4A;font-weight:700">REGISTER</span> 按钮开始</div>
+  </div>
+
+  <div class="w-mock-wrap">
+    <div class="w-mock-header">
+      <div class="w-mock-dot" style="background:#EF4444"></div>
+      <div class="w-mock-dot" style="background:#F59E0B"></div>
+      <div class="w-mock-dot" style="background:#22C55E"></div>
+      <div class="w-mock-urlbar">&#128274; imigresen-online.imi.gov.my/mdac/main</div>
+      <div class="w-mock-badge">&#128065; 仅供参考</div>
+    </div>
+
+    <div class="w-legend">
+      <div class="w-legend-item"><span class="fm-type inp" style="font-size:11px">键盘输入</span> 需要打字填写</div>
+      <div class="w-legend-item"><span class="fm-type sel" style="font-size:11px">下拉选择</span> 从列表中选</div>
+      <div class="w-legend-item"><span style="display:inline-block;width:12px;height:12px;border-radius:3px;background:#DCFCE7;border:1px solid #BBF7D0"></span> 绿色 = 已帮你写好，照抄</div>
+    </div>
+
+    <div class="fm-nav">
+      <div class="fm-tab act" onclick="showS(0)">&#128100; 个人信息</div>
+      <div class="fm-tab" onclick="showS(1)">&#9992;&#65039; 行程信息</div>
+      <div class="fm-tab" onclick="showS(2)">&#127968; 住址</div>
+      <div class="fm-tab" onclick="showS(3)">&#9989; 提交</div>
+    </div>
+
+    <!-- S0: Personal -->
+    <div class="fm-section active" data-s="0">
+      <div class="fm-head">Registration</div>
+      <div class="fm-body">
+        <div class="fm-sect"><div class="fm-sect-title">Personal Information 个人信息</div><div class="fm-sect-sub">所有内容必须与护照完全一致，建议打开护照对照填写</div></div>
+        <div class="fm-grid">
+
+          <div class="fm-row fm-full">
+            <div class="fm-label"><span class="rq">*</span> Name : <span class="fm-type inp">键盘输入</span></div>
+            <input class="fm-input" value="ZHANG SAN" style="color:#1E40AF;font-weight:600" readonly>
+            <div class="fm-tip">填护照上的英文全名，大小写无所谓，拼写要和护照一致</div>
+            <div class="fm-eg">&#9997;&#65039; 建议填写：护照姓名页上的英文名，如 <b>ZHANG SAN</b> 或 <b>TAN WEI MING</b></div>
+          </div>
+
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Passport No. : <span class="fm-type inp">键盘输入</span></div>
+            <input class="fm-input" value="E12345678" style="color:#1E40AF;font-weight:600" readonly>
+            <div class="fm-eg">&#9997;&#65039; 填护照号码，如 <b>E12345678</b></div>
+          </div>
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Nationality / Citizenship : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select" disabled><option>CHINA &#9660;</option></select>
+            <div class="fm-tip">下拉列表里找你的国籍<br>中国选 <b>CHINA</b>，新加坡选 <b>SINGAPORE</b></div>
+          </div>
+
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Date of Birth : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select" disabled><option>DD/MM/YYYY &#9660;</option></select>
+            <div class="fm-tip">选出生日期，注意是 日/月/年<br>1990年3月15日 &#10132; <b>15/03/1990</b></div>
+          </div>
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Place of Birth : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select" disabled><option>CHINA &#9660;</option></select>
+            <div class="fm-tip">选出生国家，和国籍通常一样</div>
+          </div>
+
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Sex : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select" disabled><option>Male &#9660;</option></select>
+            <div class="fm-tip">男选 <b>Male</b>，女选 <b>Female</b></div>
+          </div>
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Date of Passport Expiry : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select" disabled><option>DD/MM/YYYY &#9660;</option></select>
+            <div class="fm-tip">选护照有效期<br>2030年9月20日 &#10132; <b>20/09/2030</b></div>
+          </div>
+
+          <div class="fm-row fm-full">
+            <div class="fm-label"><span class="rq">*</span> Email Address : <span class="fm-type inp">键盘输入</span></div>
+            <input class="fm-input" value="zhangsan@email.com" style="color:#1E40AF;font-weight:600" readonly>
+            <div class="fm-eg">&#9997;&#65039; 填常用邮箱，如 <b>zhangsan@email.com</b>，提交后会收到确认邮件</div>
+          </div>
+
+          <div class="fm-row fm-full">
+            <div class="fm-label"><span class="rq">*</span> Confirm Email Address : <span class="fm-type inp">键盘输入</span></div>
+            <input class="fm-input" value="zhangsan@email.com" style="color:#1E40AF;font-weight:600" readonly>
+            <div class="fm-eg">&#9997;&#65039; 重复填一遍上面的邮箱，必须完全一样</div>
+          </div>
+
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Country / Region Code : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select" disabled><option>SINGAPORE &#9660;</option></select>
+            <div class="fm-tip">选你<b>目前居住</b>的国家<br>住新加坡选 SINGAPORE，住中国选 CHINA</div>
+          </div>
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Mobile No. : <span class="fm-type inp">键盘输入</span></div>
+            <input class="fm-input" value="65-91234567" style="color:#1E40AF;font-weight:600" readonly>
+            <div class="fm-tip" style="font-weight:600">&#128680; 前面必须加国家区号！</div>
+            <div class="fm-eg">&#9997;&#65039; 新加坡 <b>65-9xxxxxxx</b><br>中国大陆 <b>86-138xxxxxxxx</b><br>香港 <b>852-9xxxxxxx</b> / 台湾 <b>886-9xxxxxxxx</b></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- S1: Travel -->
+    <div class="fm-section" data-s="1">
+      <div class="fm-head">Registration</div>
+      <div class="fm-body">
+        <div class="fm-sect"><div class="fm-sect-title">Traveling Information 行程信息</div></div>
+        <div class="fm-warn">&#9888;&#65039; 到达日期必须在提交后 3 天内（含当天），提前太多会填不了！</div>
+        <div class="fm-grid">
+
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Date of Arrival : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select" disabled><option>DD/MM/YYYY &#9660;</option></select>
+            <div class="fm-tip">选实际入境日期<br>2026年8月2日 &#10132; <b>02/08/2026</b></div>
+          </div>
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Mode of Travel : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select fm-gn" disabled><option>Land &#9660;</option></select>
+            <div class="fm-tip gn">陆路过关选 <b>Land</b><br>飞机选 Air / 坐船选 Sea</div>
+          </div>
+
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Date of Departure : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select" disabled><option>DD/MM/YYYY &#9660;</option></select>
+            <div class="fm-tip">选离开马来西亚的日期<br>2026年8月6日 &#10132; <b>06/08/2026</b></div>
+          </div>
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Last Port of Embarkation before Malaysia : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select fm-gn" disabled><option>Singapore &#9660;</option></select>
+            <div class="fm-tip gn">进入马来西亚前你实际所在的国家<br>从新加坡过来选 <b>Singapore</b></div>
+          </div>
+
+          <div class="fm-row fm-full">
+            <div class="fm-label"><span class="rq">*</span> Flight / Vessel / Transportation No. : <span class="fm-type inp">键盘输入</span></div>
+            <input class="fm-input fm-gn" value="NA" readonly>
+            <div class="fm-eg gn">&#9997;&#65039; 陆路没有航班号，直接打 <b>NA</b></div>
+          </div>
+
+          <div class="fm-row fm-full">
+            <div class="fm-label"><span class="rq">*</span> Accommodation of Stay : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select fm-gn" disabled><option>Hotel &#9660;</option></select>
+            <div class="fm-tip gn">住酒店选 <b>Hotel</b>，住朋友/亲戚家选 <b>Others</b></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- S2: Address -->
+    <div class="fm-section" data-s="2">
+      <div class="fm-head">Registration</div>
+      <div class="fm-body">
+        <div class="fm-sect"><div class="fm-sect-title">Address (In Malaysia) 马来西亚住址</div><div class="fm-sect-sub">&#9888;&#65039; 只能填英文字母和数字 (alphanumeric only)，不能输中文！</div></div>
+        <div class="fm-grid">
+
+          <div class="fm-row fm-full">
+            <div class="fm-label"><span class="rq">*</span> Address : <span class="fm-type inp">键盘输入</span></div>
+            <input class="fm-input fm-gn" value="Jalan Pantai 3" readonly>
+            <input class="fm-input fm-gn" value="Desaru Coast Bandar Penawar" readonly style="margin-top:4px">
+            <div class="fm-eg gn">&#9997;&#65039; 照抄上面两行地址即可</div>
+          </div>
+
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> State : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select fm-gn" disabled><option>Johor &#9660;</option></select>
+            <div class="fm-tip gn">选 <b>Johor</b></div>
+          </div>
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> City : <span class="fm-type sel">下拉选择</span></div>
+            <select class="fm-select fm-gn" disabled><option>Bandar Penawar &#9660;</option></select>
+            <div class="fm-tip gn">先选完 State 才出现 City 列表<br>选 <b>Bandar Penawar</b></div>
+          </div>
+
+          <div class="fm-row">
+            <div class="fm-label"><span class="rq">*</span> Postcode : <span class="fm-type inp">键盘输入</span></div>
+            <input class="fm-input fm-gn" value="81930" readonly style="width:120px">
+            <div class="fm-eg gn">&#9997;&#65039; 填 <b>81930</b></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- S3: Submit -->
+    <div class="fm-section" data-s="3">
+      <div class="fm-head">Registration</div>
+      <div class="fm-body">
+        <div class="fm-puzzle">
+          <div style="font-weight:600;margin-bottom:6px">Drag To Verify 拖动滑块验证</div>
+          <div style="background:#e5e7eb;border-radius:4px;height:32px;position:relative;margin:8px 0">
+            <div style="position:absolute;left:0;top:0;height:100%;width:34px;background:#5b6abf;border-radius:4px;display:flex;align-items:center;justify-content:center;color:white;font-size:16px">&#10132;</div>
+            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:11px;color:#999">Slide the Puzzle &#10132;</div>
+          </div>
+          <div class="fm-tip" style="display:inline-block">向右拖动滑块完成拼图验证（类似验证码）</div>
+        </div>
+        <div class="fm-submit-area">
+          <div class="fm-submit-btn">SUBMIT</div>
+          <div class="fm-tip" style="display:inline-block;margin-top:6px">全部检查无误后点击提交</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-tips">
+    <h3>&#128161; 提交后注意事项</h3>
+    <ol class="w-tips-list">
+      <li><span>提交成功后你的邮箱会收到一封<b>确认邮件</b></span></li>
+      <li><span>一定要<b>截图保存确认页</b>，记下注册号码（Registration No.）</span></li>
+      <li><span>入境马来西亚时海关<b>可能会抽查</b>，手机里存好截图备用</span></li>
+      <li><span>万一填错了不用慌，<b>重新注册一次</b>就行，系统以最后一次提交为准</span></li>
+    </ol>
+  </div>
+
+  <div class="w-entry" style="padding:20px">
+    <div style="font-size:14px;color:#6b7280;margin-bottom:10px">准备好了？扫码或点击链接前往官网填写 &#128071;</div>
+    <div class="w-qr"><div id="qrBottom"></div></div>
+    <a class="w-link" href="https://imigresen-online.imi.gov.my/mdac/main?registerMain" target="_blank">&#128279; 前往 MDAC 官方网站</a>
+  </div>
+
+  <div style="text-align:center;font-size:11px;color:#ccc;margin-top:16px">MDAC 填写指南 &#183; 仅供参考 &#183; 2026</div>
+</div>
+
+<script>
+function showS(i){
+  var secs=document.querySelectorAll('.fm-section');
+  var tabs=document.querySelectorAll('.fm-tab');
+  for(var j=0;j<secs.length;j++){
+    secs[j].style.display=(j===i)?'block':'none';
+    secs[j].className=(j===i)?'fm-section active':'fm-section';
+  }
+  for(var j=0;j<tabs.length;j++){
+    tabs[j].className=(j===i)?'fm-tab act':'fm-tab';
+  }
+}
+function mkQR(id,sz){
+  var el=document.getElementById(id);
+  if(!el)return;
+  try{
+    new QRCode(el,{
+      text:'https://imigresen-online.imi.gov.my/mdac/main?registerMain',
+      width:sz,height:sz,
+      colorDark:'#1a3a7a',colorLight:'#ffffff',
+      correctLevel:QRCode.CorrectLevel.M
+    });
+  }catch(e){}
+}
+mkQR('qrMain',160);
+mkQR('qrBottom',130);
+</script>
+</body>
+</html>
