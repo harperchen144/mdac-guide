@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>马来西亚新山陆路入境指南 MDAC 填写教程</title>
+<title>入境卡填写指南（MDAC 去程入境 MY &amp; SGAC 回程入境 SG）</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -78,7 +78,7 @@
   .fm-puzzle{background:#f5f5f5;border:1px solid #ddd;border-radius:5px;padding:8px;margin:0 14px 8px;text-align:center;font-size:11px;color:#888}
   .fm-submit-area{text-align:center;padding:8px 14px 12px}
   .fm-submit-btn{display:inline-block;background:#5b6abf;color:white;border:none;border-radius:4px;padding:7px 30px;font-size:13px;font-weight:600;opacity:0.85}
-  .sub-tab.act{background:#2563eb!important;color:#fff!important}
+  .sub-tab.act,.sg-sub-tab.act{background:#2563eb!important;color:#fff!important}
   .sub-sec{animation:fadeIn 0.3s ease}
   .footer{text-align:center;font-size:11px;color:#ccc;margin-top:20px}
   @media(max-width:500px){
@@ -94,14 +94,15 @@
 <div class="page">
 
   <div style="text-align:center;margin-bottom:14px">
-    <div style="font-size:22px;font-weight:700">&#127474;&#127486; 新山陆路入境指南</div>
-    <div style="font-size:13px;color:#6b7280;margin-top:2px">Malaysia Johor &#183; MDAC + 过关须知</div>
+    <div style="font-size:20px;font-weight:700">&#127474;&#127486; &#127480;&#127468; 入境卡填写指南</div>
+    <div style="font-size:13px;color:#6b7280;margin-top:2px">MDAC 去程入境马来西亚 &#183; SGAC 回程入境新加坡</div>
   </div>
 
   <div class="top-nav">
     <div class="top-tab act" onclick="showTop(0)">&#128203; 入境须知</div>
-    <div class="top-tab" onclick="showTop(1)">&#128221; MDAC 教程</div>
-    <div class="top-tab" onclick="showTop(2)">&#10067; 常见问题</div>
+    <div class="top-tab" onclick="showTop(1)">&#127474;&#127486; MDAC 教程</div>
+    <div class="top-tab" onclick="showTop(2)">&#127480;&#127468; SGAC 教程</div>
+    <div class="top-tab" onclick="showTop(3)">&#10067; FAQ</div>
   </div>
 
   <!-- ========== SEC 0: 入境须知 ========== -->
@@ -110,28 +111,62 @@
       <b>&#9888;&#65039; MDAC 必须在到达前 3 天内填写</b>（含提交当天），太早填会失效！请在出发前 1–3 天完成提交。
     </div>
     <div class="card">
-      <h2>&#128196; 签证与 MDAC 须知</h2>
-      <div style="font-size:13px;color:#6b7280;margin-bottom:10px">不同护照入境马来西亚的要求不同，请对号入座：</div>
-      <div style="display:grid;gap:8px">
+      <h2>&#128196; 签证与入境卡须知</h2>
+      <div style="font-size:13px;color:#6b7280;margin-bottom:10px">不同护照的要求不同，请对号入座：</div>
+
+      <div style="font-size:13px;font-weight:600;color:#2563eb;margin-bottom:6px">&#127474;&#127486; 入境马来西亚（去程）</div>
+      <div style="display:grid;gap:6px;margin-bottom:14px">
         <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
-          <div style="font-weight:600;color:#166534;margin-bottom:2px">&#127464;&#127475; 中国大陆护照</div>
-          <b>免签入境</b>（至 2026 年 12 月 31 日），每次最多停留 30 天<br>
-          <span style="color:#E24B4A;font-weight:600">&#10071; 必须填写 MDAC</span>，到达前 3 天内提交
+          <div style="font-weight:600;color:#166534">&#127464;&#127475; 中国大陆护照</div>
+          免签（至 2026.12.31），每次最多 30 天 · <span style="color:#E24B4A;font-weight:600">必须填 MDAC</span>
         </div>
         <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
-          <div style="font-weight:600;color:#166534;margin-bottom:2px">&#127462;&#127482; 澳大利亚护照</div>
-          <b>免签入境</b>，最多停留 90 天<br>
-          <span style="color:#E24B4A;font-weight:600">&#10071; 必须填写 MDAC</span>，到达前 3 天内提交
+          <div style="font-weight:600;color:#166534">&#127462;&#127482; 澳大利亚护照</div>
+          免签，最多 90 天 · <span style="color:#E24B4A;font-weight:600">必须填 MDAC</span>
         </div>
         <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
-          <div style="font-weight:600;color:#166534;margin-bottom:2px">&#127469;&#127472; 香港特区护照</div>
-          <b>免签入境</b>，最多停留 90 天<br>
-          <span style="color:#E24B4A;font-weight:600">&#10071; 必须填写 MDAC</span>，到达前 3 天内提交
+          <div style="font-weight:600;color:#166534">&#127469;&#127472; 香港特区护照</div>
+          免签，最多 90 天 · <span style="color:#E24B4A;font-weight:600">必须填 MDAC</span>
+        </div>
+        <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
+          <div style="font-weight:600;color:#166534">&#127481;&#127484; 台湾护照</div>
+          免签，最多 15 天 · <span style="color:#E24B4A;font-weight:600">必须填 MDAC</span>
+        </div>
+        <div style="background:#F0FDF4;border:1px solid #BBF7D0;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
+          <div style="font-weight:600;color:#166534">&#127474;&#127486; 马来西亚护照</div>
+          本国公民 · <span style="color:#166534;font-weight:600">&#9989; 无需 MDAC</span>
         </div>
         <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
-          <div style="font-weight:600;color:#1E40AF;margin-bottom:2px">&#127480;&#127468; 新加坡护照</div>
-          <b>免签入境</b>，最多停留 90 天<br>
-          <span style="color:#166534;font-weight:600">&#9989; 无需填写 MDAC</span>，直接带护照过关即可
+          <div style="font-weight:600;color:#1E40AF">&#127480;&#127468; 新加坡护照</div>
+          免签，最多 90 天 · <span style="color:#166534;font-weight:600">&#9989; 无需 MDAC</span>
+        </div>
+      </div>
+
+      <div style="font-size:13px;font-weight:600;color:#c0392b;margin-bottom:6px">&#127480;&#127468; 入境新加坡（回程）</div>
+      <div style="display:grid;gap:6px">
+        <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
+          <div style="font-weight:600;color:#991B1B">&#127464;&#127475; 中国大陆护照</div>
+          免签，最多 30 天 · <span style="color:#E24B4A;font-weight:600">必须填 SGAC</span>
+        </div>
+        <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
+          <div style="font-weight:600;color:#991B1B">&#127462;&#127482; 澳大利亚护照</div>
+          免签 · <span style="color:#E24B4A;font-weight:600">必须填 SGAC</span>
+        </div>
+        <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
+          <div style="font-weight:600;color:#991B1B">&#127469;&#127472; 香港特区护照</div>
+          免签 · <span style="color:#E24B4A;font-weight:600">必须填 SGAC</span>
+        </div>
+        <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
+          <div style="font-weight:600;color:#991B1B">&#127481;&#127484; 台湾护照</div>
+          免签 · <span style="color:#E24B4A;font-weight:600">必须填 SGAC</span>
+        </div>
+        <div style="background:#FEF2F2;border:1px solid #FECACA;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
+          <div style="font-weight:600;color:#991B1B">&#127474;&#127486; 马来西亚护照</div>
+          免签 · <span style="color:#E24B4A;font-weight:600">必须填 SGAC</span>
+        </div>
+        <div style="background:#EFF6FF;border:1px solid #BFDBFE;border-radius:8px;padding:10px 14px;font-size:13px;line-height:1.7">
+          <div style="font-weight:600;color:#1E40AF">&#127480;&#127468; 新加坡护照</div>
+          本国公民 · <span style="color:#166534;font-weight:600">&#9989; 无需 SGAC</span>
         </div>
       </div>
     </div>
@@ -331,8 +366,200 @@
 
   </div><!-- end SEC 1 MDAC 教程 -->
 
-  <!-- ========== SEC 2: FAQ ========== -->
+  <!-- ========== SEC 2: SGAC 教程 ========== -->
   <div class="sec" data-top="2">
+
+    <div class="alert alert-red">
+      <b>&#9888;&#65039; SGAC 必须在到达新加坡前 3 天内填写</b>，回程时别忘了！免费，约 5 分钟完成。<br><b>新加坡公民/PR 不需要填 SGAC。</b>
+    </div>
+
+    <div class="card" style="text-align:center">
+      <h3>扫码或点击前往 SGAC 官方填写页面</h3>
+      <div class="qr-wrap"><div class="qr-box"><div id="qr4"></div></div></div>
+      <a class="link" href="https://eservices.ica.gov.sg/sgarrivalcard/" target="_blank">&#128279; eservices.ica.gov.sg/sgarrivalcard</a>
+      <div style="font-size:12px;color:#9ca3af;margin-top:6px">ICA 官方网站，免费填写，不要用第三方付费网站！</div>
+    </div>
+
+    <div class="card">
+      <h2>&#128221; SGAC 填写要点</h2>
+      <div class="card-sub">Singapore Arrival Card · 回程入境新加坡时需要</div>
+      <div class="kp">
+        <div class="kp-item"><span class="kp-label">填写时间：</span><span>回程到达新加坡前 3 天内</span></div>
+        <div class="kp-item"><span class="kp-label">Trip Type：</span><span>选 <b>Individual</b>（个人）</span></div>
+        <div class="kp-item"><span class="kp-label">Travel Mode：</span><span>选 <b>Land</b>（陆路坐车回）</span></div>
+        <div class="kp-item"><span class="kp-label">Last City/Port：</span><span>填 <b>Johor Bahru</b>（从新山回来）</span></div>
+        <div class="kp-item"><span class="kp-label">Address in SG：</span><span>填你在新加坡的住址</span></div>
+        <div class="kp-item"><span class="kp-label">Health Declaration：</span><span>如实填写，通常全选 <b>No</b></span></div>
+      </div>
+    </div>
+
+    <!-- Sub-tabs: 截图图解 / 模拟填写 -->
+    <div style="display:flex;gap:0;margin-bottom:14px;border-radius:10px;overflow:hidden;border:1px solid #ddd;background:#fff">
+      <div class="sg-sub-tab act" onclick="showSGSub(0)" style="flex:1;padding:10px;text-align:center;font-size:13px;font-weight:600;cursor:pointer;color:#6b7280;transition:all 0.15s;border:none;background:none">&#128247; 截图图解</div>
+      <div class="sg-sub-tab" onclick="showSGSub(1)" style="flex:1;padding:10px;text-align:center;font-size:13px;font-weight:600;cursor:pointer;color:#6b7280;transition:all 0.15s;border:none;background:none;border-left:1px solid #ddd">&#128221; 模拟填写</div>
+    </div>
+
+    <!-- SGAC 截图图解 -->
+    <div class="sg-sub-sec active" data-sgsub="0">
+      <div class="alert alert-blue" style="font-size:13px">
+        <b>&#128247; 以下是 SGAC 官方网站的真实截图</b>，红色标注为中文填写提示。
+      </div>
+      <div class="card">
+        <h2>进入官网，点击 Submit SGAC</h2>
+        <div class="card-sub">打开 <a href="https://eservices.ica.gov.sg/sgarrivalcard/" target="_blank" class="link">SGAC 官网</a>，点击左边的 Submit SGAC</div>
+        <img src="sgac_home.jpeg" alt="SGAC首页" style="width:100%;border-radius:8px;border:1px solid #e5e7eb">
+      </div>
+      <div class="card">
+        <h2>选择身份类型</h2>
+        <div class="card-sub">工签选 Long-Term Pass Holder；外国旅客选 Foreign Visitor / IPA Holder</div>
+        <img src="sgac_type.jpeg" alt="选择身份类型" style="width:100%;border-radius:8px;border:1px solid #e5e7eb">
+      </div>
+      <div class="card">
+        <h2>Step 1：填写个人信息 + 健康申报</h2>
+        <div class="card-sub">选到达日期 → 填护照信息 → 健康声明，全部在同一页</div>
+        <img src="sgac1.jpeg" alt="SGAC Step 1 个人信息" style="width:100%;border-radius:8px;border:1px solid #e5e7eb">
+      </div>
+      <div class="card">
+        <h2>Step 2：填写行程信息</h2>
+        <div class="card-sub">出发地、交通方式（Land/Car）、车牌号、住宿、离境日期等</div>
+        <img src="sgac2.jpeg" alt="SGAC Step 2 行程信息" style="width:100%;border-radius:8px;border:1px solid #e5e7eb">
+      </div>
+      <div class="card">
+        <h2>Step 3：确认信息 Review</h2>
+        <div class="card-sub">再次核实所有填写内容，确认无误后点 Next</div>
+        <img src="sgac3.jpeg" alt="SGAC Step 3 确认" style="width:100%;border-radius:8px;border:1px solid #e5e7eb">
+      </div>
+      <div class="card">
+        <h2>Step 4：验证码 + 提交</h2>
+        <div class="card-sub">输入验证码，点 Submit 完成。确认信息会发到你填的邮箱</div>
+        <img src="sgac4.jpeg" alt="SGAC Step 4 提交" style="width:100%;border-radius:8px;border:1px solid #e5e7eb">
+      </div>
+    </div>
+
+    <!-- SGAC 模拟填写 -->
+    <div class="sg-sub-sec" data-sgsub="1" style="display:none">
+
+    <div class="fm-mock-wrap">
+      <div class="fm-mock-bar">
+        <div class="fm-dot" style="background:#EF4444"></div>
+        <div class="fm-dot" style="background:#F59E0B"></div>
+        <div class="fm-dot" style="background:#22C55E"></div>
+        <div class="fm-urlbar">&#128274; eservices.ica.gov.sg/sgarrivalcard</div>
+        <div class="fm-badge">&#128065; 模拟示例</div>
+      </div>
+
+      <div class="fm-legend">
+        <div class="fm-legend-item"><span class="fm-type inp" style="font-size:10px">键盘输入</span> 打字填写</div>
+        <div class="fm-legend-item"><span class="fm-type sel" style="font-size:10px">下拉/按钮</span> 选择</div>
+        <div class="fm-legend-item"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:#DCFCE7;border:1px solid #BBF7D0"></span> 绿色=已帮你填好</div>
+      </div>
+
+      <div class="fm-nav">
+        <div class="fm-tab act" onclick="showSG(0)">1. 个人信息</div>
+        <div class="fm-tab" onclick="showSG(1)">2. 行程信息</div>
+        <div class="fm-tab" onclick="showSG(2)">3. 确认提交</div>
+      </div>
+
+      <!-- SG Step 1: Traveller Information -->
+      <div class="sg-section active" data-sg="0">
+        <div class="fm-head" style="background:linear-gradient(135deg,#1a3a5c,#2c5f8a)">Step 1 · Traveller Information 个人信息</div>
+        <div class="fm-body">
+          <div class="fm-sect"><div class="fm-sect-title">Date of Arrival 到达日期</div></div>
+          <div class="fm-grid">
+            <div class="fm-row fm-full"><div class="fm-label"><span class="rq">*</span> Date of Arrival (DD/MM/YYYY) : <span class="fm-type sel">按钮选择</span></div><div style="display:flex;gap:6px;margin-top:4px"><span style="background:#1a3a5c;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px">06/08/2026</span><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">07/08/2026</span><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">08/08/2026</span></div><div class="fm-tip">选你回到新加坡的日期（系统只显示 3 天内的日期）</div></div>
+          </div>
+
+          <div class="fm-sect"><div class="fm-sect-title">Personal Information 个人信息</div><div class="fm-sect-sub">可点 Retrieve with Passport 自动填入护照信息</div></div>
+          <div class="fm-grid">
+            <div class="fm-row fm-full"><div class="fm-label"><span class="rq">*</span> Full Name (In Passport) : <span class="fm-type inp">键盘输入</span></div><input class="fm-input" value="ZHANG SAN" style="color:#1E40AF;font-weight:600" readonly><div class="fm-tip" style="font-weight:600">&#128680; 必须全部大写，和护照一致</div></div>
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Passport Number : <span class="fm-type inp">键盘输入</span></div><input class="fm-input" value="E1234567X" style="color:#1E40AF;font-weight:600" readonly></div>
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Date of Passport Expiry : <span class="fm-type sel">日历选择</span></div><select class="fm-select" disabled><option>DD/MM/YYYY &#9660;</option></select><div class="fm-tip">有效期需 &#8805; 入境后 6 个月</div></div>
+            <div class="fm-row fm-full"><div class="fm-label"><span class="rq">*</span> Sex as indicated in passport : <span class="fm-type sel">按钮选择</span></div><div style="display:flex;gap:6px;margin-top:4px"><span style="background:#1a3a5c;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px">FEMALE</span><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">MALE</span><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">OTHERS</span></div></div>
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Date of Birth : <span class="fm-type sel">日历选择</span></div><select class="fm-select" disabled><option>DD/MM/YYYY &#9660;</option></select></div>
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Nationality/Citizenship : <span class="fm-type sel">下拉选择</span></div><select class="fm-select" disabled><option>CHINESE &#9660;</option></select></div>
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Country/Place of Birth : <span class="fm-type sel">下拉选择</span></div><select class="fm-select" disabled><option>CHINA &#9660;</option></select></div>
+            <div class="fm-row fm-full"><div class="fm-label"><span class="rq">*</span> Place of Residence : <span class="fm-type sel">下拉选择</span></div><select class="fm-select" disabled><option>选居住国家、省份、城市 &#9660;</option></select><div class="fm-tip">逐级选择：国家 → 省/州 → 城市</div></div>
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Email Address : <span class="fm-type inp">键盘输入</span></div><input class="fm-input" value="zhangsan@email.com" style="color:#1E40AF;font-weight:600" readonly><div class="fm-eg">&#9997;&#65039; 用来收确认邮件</div></div>
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Country/Region Code : <span class="fm-type sel">下拉选择</span></div><select class="fm-select" disabled><option>+65 &#9660;</option></select></div>
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Mobile Number : <span class="fm-type inp">键盘输入</span></div><input class="fm-input" value="91234567" style="color:#1E40AF;font-weight:600" readonly><div class="fm-tip">直接填号码，区号已在左边选好</div></div>
+          </div>
+
+          <div class="fm-sect"><div class="fm-sect-title">Others 其他</div></div>
+          <div class="fm-grid">
+            <div class="fm-row fm-full"><div class="fm-label">Have you ever used a passport under different name to enter Singapore?</div><div style="display:flex;gap:6px;margin-top:4px"><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">YES</span><span style="background:#1a3a5c;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px">NO</span></div><div class="fm-tip">是否曾用不同姓名的护照入境新加坡，通常选 <b>NO</b></div></div>
+          </div>
+
+          <div class="fm-sect"><div class="fm-sect-title">Health Declaration 健康申报</div><div class="fm-sect-sub">虚假申报在新加坡法律下属违法行为，请如实填写</div></div>
+          <div class="fm-grid">
+            <div class="fm-row fm-full"><div class="fm-label">Do you currently have fever, cough, shortness of breath, headache, vomiting, dizziness or rash?</div><div style="display:flex;gap:6px;margin-top:4px"><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">YES</span><span style="background:#1a3a5c;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px">NO</span></div><div class="fm-tip">是否有发烧、咳嗽、气促、头痛、呕吐、头晕或皮疹，没有选 <b>NO</b></div></div>
+            <div class="fm-row fm-full"><div class="fm-label">Have you visited any of the listed countries in Africa or Latin America in the past 6 days?</div><div style="display:flex;gap:6px;margin-top:4px"><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">YES</span><span style="background:#1a3a5c;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px">NO</span></div><div class="fm-tip">过去 6 天内是否去过非洲或拉丁美洲指定国家，通常选 <b>NO</b></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SG Step 2: Trip Information -->
+      <div class="sg-section" data-sg="1" style="display:none">
+        <div class="fm-head" style="background:linear-gradient(135deg,#1a3a5c,#2c5f8a)">Step 2 · Trip Information 行程信息</div>
+        <div class="fm-body">
+          <div class="fm-grid">
+            <div class="fm-row fm-full"><div class="fm-label"><span class="rq">*</span> Last City / Port of Embarkation Before Singapore : <span class="fm-type sel">下拉选择</span></div><select class="fm-select fm-gn" disabled><option>MALAYSIA, JOHOR, JOHOR BAHRU &#9660;</option></select><div class="fm-tip gn">逐级选：国家 → 州 → 城市<br>从新山回来选 <b>MALAYSIA → JOHOR → JOHOR BAHRU</b></div></div>
+
+            <div class="fm-row fm-full"><div class="fm-label"><span class="rq">*</span> Purpose of Travel : <span class="fm-type sel">下拉选择</span></div><select class="fm-select" disabled><option>Holiday/Leisure &#9660;</option></select><div class="fm-tip">旅游选 <b>Holiday/Leisure</b>，出差选 Business/Meeting/Conference</div></div>
+
+            <div class="fm-row fm-full"><div class="fm-label"><span class="rq">*</span> Mode of Travel : <span class="fm-type sel">按钮选择</span></div><div style="display:flex;gap:6px;margin-top:4px"><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">AIR &#9992;&#65039;</span><span style="background:#1a3a5c;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px">LAND &#128663;</span><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">SEA &#9875;</span></div><div class="fm-tip gn">坐车回来选 <b>LAND</b></div></div>
+
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Mode of Transport : <span class="fm-type sel">下拉选择</span></div><select class="fm-select fm-gn" disabled><option>CAR &#9660;</option></select><div class="fm-tip gn">坐车选 <b>CAR</b></div></div>
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Vehicle Number : <span class="fm-type inp">键盘输入</span></div><input class="fm-input" value="SGT1234" style="color:#1E40AF;font-weight:600" readonly><div class="fm-tip">车牌号，出发前会通知大家</div></div>
+
+            <div class="fm-row fm-full"><div class="fm-label"><span class="rq">*</span> Type of Accommodation in Singapore : <span class="fm-type sel">按钮选择</span></div><div style="display:flex;gap:6px;margin-top:4px"><span style="background:#1a3a5c;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px">HOTEL &#127960;</span><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">RESIDENTIAL &#128274;</span><span style="background:#eee;padding:4px 10px;border-radius:4px;font-size:11px;color:#666">OTHERS &#127968;</span></div><div class="fm-tip">住酒店选 <b>HOTEL</b>，住自己家选 <b>RESIDENTIAL</b></div></div>
+
+            <div class="fm-row fm-full"><div class="fm-label"><span class="rq">*</span> Name of Hotel : <span class="fm-type sel">下拉选择</span></div><select class="fm-select" disabled><option>选你入住的酒店 &#9660;</option></select><div class="fm-tip">从列表中搜索选择酒店名称</div></div>
+
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Date of Departure from Singapore : <span class="fm-type sel">日历选择</span></div><select class="fm-select" disabled><option>DD/MM/YYYY &#9660;</option></select><div class="fm-tip">离开新加坡的日期，以实际为准</div></div>
+
+            <div class="fm-row"><div class="fm-label"><span class="rq">*</span> Next City / Port of Disembarkation After Singapore : <span class="fm-type sel">下拉选择</span></div><select class="fm-select" disabled><option>根据实际情况选择 &#9660;</option></select><div class="fm-tip">离开新加坡后去哪，可勾选 <b>Same as Last City</b></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SG Step 3: Review + Submit -->
+      <div class="sg-section" data-sg="2" style="display:none">
+        <div class="fm-head" style="background:linear-gradient(135deg,#1a3a5c,#2c5f8a)">Step 3-4 · Review &amp; Submit 确认提交</div>
+        <div class="fm-body">
+          <div class="fm-sect"><div class="fm-sect-title">Review 再次确认</div><div class="fm-sect-sub">系统会列出所有你填写的信息，逐项核对后点 Next</div></div>
+          <div style="padding:8px 14px 4px"><div class="fm-tip">&#128270; 仔细检查每项信息是否正确，有误可点 Edit 修改</div></div>
+
+          <div class="fm-sect" style="margin-top:8px"><div class="fm-sect-title">Security Verification 验证码</div></div>
+          <div style="padding:4px 14px 12px">
+            <div style="background:#f5f5f5;border:1px solid #ddd;border-radius:6px;padding:10px;text-align:center">
+              <div style="font-weight:600;font-size:12px;margin-bottom:6px">Security Verification</div>
+              <div style="background:#fff;border:1px solid #ccc;display:inline-block;padding:4px 12px;font-size:18px;font-weight:700;font-family:monospace;letter-spacing:4px;color:#333;border-radius:4px">01683</div>
+              <div style="font-size:11px;color:#888;margin-top:6px">输入上方显示的验证码</div>
+            </div>
+            <div class="fm-tip" style="margin-top:6px">输入验证码后点 <b>Submit</b> 完成提交<br>确认信息会发到你之前填的邮箱</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- end sg-sub-sec 1 -->
+
+    <!-- SGAC tips -->
+    <div class="card">
+      <h2>&#128161; SGAC 提交后</h2>
+      <ol class="tips-list">
+        <li><span><b>截图保存确认页</b>，记下 reference number</span></li>
+        <li><span>几分钟内会收到 <b>no-reply@ica.gov.sg</b> 确认邮件</span></li>
+        <li><span>入境时<b>无需下车</b>，直接把护照给官员查验即可</span></li>
+        <li><span>不需要打印，手机里存好截图/邮件备用</span></li>
+        <li><span>填错了？<b>重新提交</b>就行，系统以最新一次为准</span></li>
+      </ol>
+    </div>
+
+  </div>
+
+  <!-- ========== SEC 3: FAQ ========== -->
+  <div class="sec" data-top="3">
     <div class="card">
       <h2>&#10067; 常见问题</h2>
       <div class="faq-q">Q: MDAC 填错了怎么办？</div><div class="faq-a">可以重新注册一次，系统以最后一次提交为准。</div>
@@ -342,19 +569,29 @@
       <div class="faq-q">Q: 新加坡护照需要填 MDAC 吗？</div><div class="faq-a">不需要，新加坡籍免填 MDAC。</div>
       <div class="faq-q">Q: 过关时需要下车吗？</div><div class="faq-a">不需要。坐车直接通过关卡，官员上车收护照查验后归还，无需下车。</div>
       <div class="faq-q">Q: 携带现金超过 USD 10,000 怎么办？</div><div class="faq-a">需要向海关申报。马币等值超过 USD 10,000 不可携带出入境（需 Bank Negara 批准）。</div>
+
+      <div style="border-top:1px solid #e5e7eb;margin:14px 0;padding-top:14px"><h3 style="font-size:15px;font-weight:600;margin-bottom:10px">&#127480;&#127468; SGAC 相关</h3></div>
+      <div class="faq-q">Q: SGAC 是什么？</div><div class="faq-a">Singapore Arrival Card，新加坡电子入境卡。所有外国旅客入境新加坡前需在线填写（新加坡公民/PR 除外）。</div>
+      <div class="faq-q">Q: SGAC 收费吗？</div><div class="faq-a">免费！官方网站 eservices.ica.gov.sg 填写完全免费。如果有网站收费，那不是官方的，不要用。</div>
+      <div class="faq-q">Q: SGAC 什么时候填？</div><div class="faq-a">回程入境新加坡前 3 天内填写。建议回程当天或前一天填。</div>
+      <div class="faq-q">Q: 回新加坡过关时需要出示什么？</div><div class="faq-a">无需下车，直接把护照递给官员查验即可。SGAC 已自动关联护照，建议手机存好确认截图以防万一。</div>
     </div>
     <div class="alert alert-green" style="text-align:center;font-size:13px"><b>如有疑问欢迎随时联系 HRA 部门协助办理～</b></div>
   </div>
 
-  <div class="footer">新山陆路入境指南 &#183; 仅供参考 &#183; 2026</div>
+  <div class="footer">入境卡填写指南（MDAC + SGAC）&#183; 仅供参考 &#183; 2026</div>
 </div>
 <script>
 function showTop(i){document.querySelectorAll('.sec').forEach(function(s,idx){s.classList.toggle('active',idx===i)});document.querySelectorAll('.top-tab').forEach(function(b,idx){b.classList.toggle('act',idx===i)});window.scrollTo({top:0,behavior:'smooth'})}
 function showSub(i){document.querySelectorAll('.sub-sec').forEach(function(s,idx){s.style.display=(idx===i)?'block':'none'});document.querySelectorAll('.sub-tab').forEach(function(b,idx){b.classList.toggle('act',idx===i)})}
+function showSG(i){document.querySelectorAll('.sg-section').forEach(function(s,idx){s.style.display=(idx===i)?'block':'none'});var tabs=document.querySelectorAll('[onclick^="showSG("]');for(var j=0;j<tabs.length;j++){tabs[j].className=(j===i)?'fm-tab act':'fm-tab'}}
+function showSGSub(i){document.querySelectorAll('.sg-sub-sec').forEach(function(s,idx){s.style.display=(idx===i)?'block':'none'});document.querySelectorAll('.sg-sub-tab').forEach(function(b,idx){b.classList.toggle('act',idx===i)})}
 function showS(i){document.querySelectorAll('.fm-section').forEach(function(s,idx){s.style.display=(idx===i)?'block':'none';s.className=(idx===i)?'fm-section active':'fm-section'});document.querySelectorAll('.fm-tab').forEach(function(b,idx){b.className=(idx===i)?'fm-tab act':'fm-tab'})}
 function cpAddr(){navigator.clipboard.writeText('Jalan Pantai 3, Desaru Coast\nBandar Penawar\nJohor Darul Ta\'zim\n81930 Malaysia').then(function(){var m=document.getElementById('cpMsg');m.style.display='inline';setTimeout(function(){m.style.display='none'},2000)})}
 function mkQR(id,sz){var el=document.getElementById(id);if(!el)return;try{new QRCode(el,{text:'https://imigresen-online.imi.gov.my/mdac/main?registerMain',width:sz,height:sz,colorDark:'#1a3a7a',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M})}catch(e){}}
 mkQR('qr1',150);mkQR('qr2',130);mkQR('qr3',140);
+function mkQR2(id,sz,url){var el=document.getElementById(id);if(!el)return;try{new QRCode(el,{text:url,width:sz,height:sz,colorDark:'#c0392b',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M})}catch(e){}}
+mkQR2('qr4',140,'https://eservices.ica.gov.sg/sgarrivalcard/');
 </script>
 </body>
 </html>
